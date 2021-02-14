@@ -37,9 +37,14 @@ const getImages = (query) => {
   fetch(url)
   .then(response => response.json())
   .then(data => {
-  console.log(data.hits)
-  showImages(data.hits)})
-  .catch(err => console.log(err))
+  console.log(data.total)
+  if(data.total == 0){
+    alert("Please input a meaningful text")
+  }
+    showImages(data.hits)
+  // showImages(data.hits)
+})
+// .catch(err => console.log(err))
 }, 1000)
 }
 
