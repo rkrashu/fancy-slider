@@ -85,7 +85,7 @@ const createSlider = () => {
     sliderContainer.appendChild(item)
   })
   const duration = document.getElementById('duration').value || 1000;
-  if(duration>=0){
+  if(duration>=499){
     changeSlide(0)
     timer = setInterval(function () {
       slideIndex++;
@@ -95,7 +95,7 @@ const createSlider = () => {
     );
   }
   else{
-    alert("Slider Change duration Can't be negative")
+    alert("Slider Change duration Can't be smaller than 500 millisecond")
   }
 }
 
